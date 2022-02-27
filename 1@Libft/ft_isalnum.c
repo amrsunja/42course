@@ -1,17 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aazdoev <aazdoev@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/23 15:13:10 by aazdoev           #+#    #+#             */
-/*   Updated: 2022/02/23 15:17:27 by aazdoev          ###   ########.fr       */
+/*   Created: 2022/02/24 18:16:39 by aazdoev           #+#    #+#             */
+/*   Updated: 2022/02/24 18:17:11 by aazdoev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_isalnum(int c) {
-  return (ft_isalpha(c) || ft_isdigit(c));
+int	ft_isalnum(int c)
+{
+	return (ft_isalpha(c) || ft_isdigit(c));
 }

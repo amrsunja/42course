@@ -1,19 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aazdoev <aazdoev@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/23 15:13:10 by aazdoev           #+#    #+#             */
-/*   Updated: 2022/02/23 15:17:27 by aazdoev          ###   ########.fr       */
+/*   Created: 2022/02/24 18:24:13 by aazdoev           #+#    #+#             */
+/*   Updated: 2022/02/24 18:30:31 by aazdoev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t  ft_strlen(const char *s) {
-  size_t i = 0;
-  while (s[++i]);
-  return (i);
+size_t	ft_strlen(const char *s)
+{
+	size_t	i;
+
+	i = 0;
+	while (s[++i])
+		;
+	return (i);
 }
