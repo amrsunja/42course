@@ -1,36 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aazdoev <aazdoev@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/24 23:28:45 by aazdoev           #+#    #+#             */
-/*   Updated: 2022/02/28 12:07:33 by aazdoev          ###   ########.fr       */
+/*   Created: 2022/02/28 12:42:28 by aazdoev           #+#    #+#             */
+/*   Updated: 2022/02/28 13:09:56 by aazdoev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void	ft_putchar(char c, int fd);
-
-void	ft_putnbr_fd(int n, int fd)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	if (n < 0)
-	{
-		write(1, "-", 1);
-		ft_putnbr_fd(-n, fd);
-	}
-	else if (n > 9)
-	{
-		ft_putnbr_fd(n / 10, fd);
-		ft_putnbr_fd(n % 10, fd);
-	}
-	else
-		ft_putchar(n + '0', fd);
-}
+	t_list	*last_elem;
 
-static void	ft_putchar(char c, int fd)
-{
-	write(fd, &c, 1);
+	if (lst)
+	{
+		if (*lst)
+		{
+			last_elem = ft_lstlast(*lst);
+			last_elem->next = new;
+		}
+		else
+			*lst = new;
+	}
 }

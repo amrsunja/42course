@@ -1,36 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aazdoev <aazdoev@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/24 23:28:45 by aazdoev           #+#    #+#             */
-/*   Updated: 2022/02/28 12:07:33 by aazdoev          ###   ########.fr       */
+/*   Created: 2022/02/28 12:27:14 by aazdoev           #+#    #+#             */
+/*   Updated: 2022/02/28 13:05:34 by aazdoev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void	ft_putchar(char c, int fd);
-
-void	ft_putnbr_fd(int n, int fd)
+t_list	*ft_lstnew(void *content)
 {
-	if (n < 0)
-	{
-		write(1, "-", 1);
-		ft_putnbr_fd(-n, fd);
-	}
-	else if (n > 9)
-	{
-		ft_putnbr_fd(n / 10, fd);
-		ft_putnbr_fd(n % 10, fd);
-	}
-	else
-		ft_putchar(n + '0', fd);
-}
+	t_list	*list;
 
-static void	ft_putchar(char c, int fd)
-{
-	write(fd, &c, 1);
+	list = (t_list *)malloc(sizeof(*list));
+	if (!list)
+		return (NULL);
+	list->content = content;
+	list->next = NULL;
+	return (list);
 }

@@ -6,7 +6,7 @@
 /*   By: aazdoev <aazdoev@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 23:28:32 by aazdoev           #+#    #+#             */
-/*   Updated: 2022/02/28 00:01:28 by aazdoev          ###   ########.fr       */
+/*   Updated: 2022/02/28 10:17:30 by aazdoev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,5 @@
 void	ft_putendl_fd(char *s, int fd)
 {
 	write(fd, s, ft_strlen(s));
-	write(fd, '\n', 1);
+	write(fd, "\n", 1);
 }
