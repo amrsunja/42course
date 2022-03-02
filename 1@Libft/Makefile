@@ -5,6 +5,8 @@ CFLAGS = -Wall -Wextra -Werror
 CC = gcc
 
 RM = rm -f
+AR = ar rc
+RN = ranlib
 
 FILES =	ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c\
 						ft_isascii.c ft_isdigit.c ft_isprint.c ft_itoa.c ft_memchr.c\
@@ -18,6 +20,33 @@ BONUS			=	ft_lstadd_back.c ft_lstadd_front.c ft_lstclear.c \
 					ft_lstdelone.c ft_lstiter.c ft_lstlast.c \
 					ft_lstmap.c ft_lstnew.c ft_lstsize.c
 
+OBJS = $(FILES:.c=.o)
+
+OBJS_BONUS = $(BONUS:.c=.o)
+
+
+
+.c.o:
+	$(CC) $(CFLAGS) -c $< -o ${<:.c=.o} #creating obj files with cflags
+
 all: $(NAME)
-$(NAME): $(FILES)
-	gcc $(CFLAGS) test/main.c $(FILES) $(BONUS) -o test/test
+
+$(NAME): $(OBJS)
+	${AR} ${NAME} ${OBJS} 
+	${RN} ${NAME} 
+
+bonus: $(OBJS_BONUS)
+#compile bonus objects
+	${AR} ${NAME} ${OBJS_BONUS} 
+	${RN} ${NAME} 
+
+clean:
+	$(RM) $(OBJS) $(OBJS_BONUS)
+
+fclean: clean
+	$(RM) $(NAME)
+
+re: fclean all
+
+
+.PHONY: all bonus fclean clean re

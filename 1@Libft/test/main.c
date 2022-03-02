@@ -34,25 +34,26 @@ void test_substr();
 char **split(char *string, const char delimiter);
 // gcc -Werror -Wextra -Wall main.c ../ft_isalpha.c ../ft_isalnum.c ../ft_isdigit.c ../ft_isascii.c ../ft_isprint.c ../ft_strlen.c
 int main() {
-	//test_bool_ft(&ft_isalpha);
-	//test_bool_ft(&ft_isalnum);
-	//test_bool_ft(&ft_isdigit);
-	//test_bool_ft(&ft_isascii); //to see if its work increment i > 128
-	//test_bool_ft(&ft_isprint);
-	//printf("%zu", ft_strlen("h"));
-	//test_memmove(9);
-	//test_atoi();
-	//test_bzero();
-	//test_calloc();
-	//test_itoa();
-	//test_memchr();
-	//test_memcmp();
-	//test_strchr();
-	//test_strdup();
-	//test_striteri();
-	//test_strjoin();
-	//test_strcmp();
-	//test_substr();
+	test_bool_ft(&ft_isalpha);
+	test_bool_ft(&ft_isalnum);
+	test_bool_ft(&ft_isdigit);
+	test_bool_ft(&ft_isascii); //to see if its work increment i > 128
+	test_bool_ft(&ft_isprint);
+	printf("%zu", ft_strlen("h"));
+	test_memmove(9);
+	test_atoi();
+	test_bzero();
+	test_calloc();
+	test_itoa();
+	test_memchr();
+	test_memcmp();
+	test_strchr();
+	test_strdup();
+	test_striteri();
+	test_strjoin();
+	test_strcmp();
+	test_substr();
+
 	char **tab = ft_split("hello '\t' sdf", ' ');
 	printf("%s\n", tab[0]);
 	printf("%s\n", tab[1]);
