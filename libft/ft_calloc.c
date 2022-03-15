@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aazdoev <aazdoev@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/24 17:59:15 by aazdoev           #+#    #+#             */
-/*   Updated: 2022/03/15 12:04:16 by aazdoev          ###   ########.fr       */
+/*   Created: 2022/03/15 21:09:59 by aazdoev           #+#    #+#             */
+/*   Updated: 2022/03/15 21:10:02 by aazdoev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 void	*ft_calloc(size_t count, size_t size)
 {
-	void	*space;
+	void	*room;
 
-	space = (void *)malloc(size * count);
-	if (space != NULL)
-		ft_bzero(space, size * count);
-	return (space);
+	room = (void *)malloc(size * count);
+	if (room != NULL)
+		ft_bzero(room, size * count);
+	return (room);
 }

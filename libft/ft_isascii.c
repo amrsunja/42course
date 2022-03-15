@@ -1,23 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aazdoev <aazdoev@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ibalbako <ibalbako@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/24 17:59:15 by aazdoev           #+#    #+#             */
-/*   Updated: 2022/03/15 12:04:16 by aazdoev          ###   ########.fr       */
+/*   Created: 2022/03/07 10:05:08 by ibalbako          #+#    #+#             */
+/*   Updated: 2022/03/07 12:42:16 by ibalbako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t count, size_t size)
+int	ft_isascii(int c)
 {
-	void	*space;
-
-	space = (void *)malloc(size * count);
-	if (space != NULL)
-		ft_bzero(space, size * count);
-	return (space);
+	if (c >= 0 && c <= 127)
+		return (1);
+	else
+		return (0);
 }

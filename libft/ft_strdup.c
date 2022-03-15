@@ -1,23 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aazdoev <aazdoev@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/24 17:59:15 by aazdoev           #+#    #+#             */
-/*   Updated: 2022/03/15 12:04:16 by aazdoev          ###   ########.fr       */
+/*   Created: 2022/03/15 21:12:19 by aazdoev           #+#    #+#             */
+/*   Updated: 2022/03/15 21:12:20 by aazdoev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t count, size_t size)
+char	*ft_strdup(const char *s1)
 {
-	void	*space;
+	char	*dup;
+	size_t	len;
+	size_t	i;
 
-	space = (void *)malloc(size * count);
-	if (space != NULL)
-		ft_bzero(space, size * count);
-	return (space);
+	len = ft_strlen(s1);
+	dup = (char *)malloc(sizeof(char) * (len + 1));
+	if (dup != NULL)
+	{
+		i = 0;
+		while (i < len)
+		{
+			dup[i] = s1[i];
+			i++;
+		}
+		dup[i] = '\0';
+	}
+	return (dup);
 }
