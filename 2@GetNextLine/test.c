@@ -36,28 +36,18 @@
 int main(void)
 {
 	int fd;
-	char *path = "file.txt";//"Tests/text.txt";
+	char *path = "gnlTester/files/nl";//"Tests/text.txt";
 
 	fd = open(path, O_RDONLY);
 
-	printf("> %s\n", get_next_line(fd));
+	printf("%s", get_next_line(fd));
 	//close(fd);
-	printf("> %s\n", get_next_line(fd));
-	printf("> %s\n", get_next_line(fd));
-	printf("> %s\n", get_next_line(fd));
-	printf("> %s\n", get_next_line(fd));
-	printf("> %s\n", get_next_line(fd));
-	printf("> %s\n", get_next_line(fd));
-	printf("> %s\n", get_next_line(fd));
-	printf("> %s\n", get_next_line(fd));
-	printf("> %s\n", get_next_line(fd));
-	printf("> %s\n", get_next_line(fd));
-	printf("> %s\n", get_next_line(fd));
-	printf("> %s\n", get_next_line(fd));
-	printf("> %s\n", get_next_line(fd));
-	printf("> %s\n", get_next_line(fd));
-	printf("> %s\n", get_next_line(fd));
-	printf("> %s\n", get_next_line(fd));
-	printf("> %s\n", get_next_line(fd));
+	printf("%s", get_next_line(fd));
+	printf("%s", get_next_line(fd));
+	printf("%s", get_next_line(fd));
+	printf("%s", get_next_line(fd));
+	//printf("%s", get_next_line(fd));
+	//printf("%s", get_next_line(fd));
+	//printf("%s", get_next_line(fd));
 	close(fd);
 }

@@ -1,38 +1,25 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: aazdoev <aazdoev@student.42.fr>            +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/15 21:26:28 by aazdoev           #+#    #+#             */
-/*   Updated: 2022/04/25 18:08:59 by aazdoev          ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "get_next_line.h"
+
 
 char	*get_next_line(int fd)
 {
-	char		result;
-	char		buf[BUFFER_SIZE + 1];
-	int			i;
-	char static	*str;
+	char	buf[BUFFER_SIZE + 1];
+	int		read_bytes;
+	int		i;
+	char	*str;
 
 	i = 0;
-	str = malloc(sizeof(*str));
-	result = read(fd, buf, 1);
-	if (result == -1 || result == 0)
+	read_bytes = read(fd, buf, 1);
+	if (read_bytes == -1 || read_bytes == 0)
 		return (NULL);
-	while (result)
+	str = "";//malloc(sizeof(*str) * read_bytes);
+	while (read_bytes)
 	{
-		buf[result] = '\0';
+		buf[BUFFER_SIZE] = 0;
+		str = ft_strjoin(str, buf);
 		if (*buf == '\n')
 			break ;
-		str[i++] = *buf;
-		result = read(fd, buf, 1);
+		read_bytes = read(fd, buf, 1);
 	}
-	free(str);
-	str[i] = '\0';
 	return (str);
 }
